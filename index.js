@@ -2,11 +2,13 @@ const express = require('express');
 const path = require('path');
 const ejsLayouts = require('express-ejs-layouts');
 const HomeController = require('./src/controllers/home.Controller');
+const connection = require('./src/config/database');
 
 const app = express();
 
-// app.use(ejsLayouts);
+// Middleware
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
@@ -16,6 +18,16 @@ const homeController = new HomeController();
 
 app.get('/', homeController.getinfo);
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000:http://localhost:3000/');
+// Connect to the database
+connection.connect(function (err) {
+  if (err) {
+    console.log(err);
+    throw err;
+  }
+  console.log('Database Connected!');
+  
+  // Start the server after the database connection is established
+  app.listen(3000, () => {
+    console.log('Server is running on port 3000: http://localhost:3000/');
+  });
 });
