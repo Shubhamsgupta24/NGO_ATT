@@ -1,0 +1,28 @@
+{
+  "name": "se",
+  "version": "1.0.0",
+  "description": "NGO Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vedant2720/NGO_ATT.git"
+  },
+  "keywords": [
+    "NGO"
+  ],
+  "author": "vedant,krishna,shubham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vedant2720/NGO_ATT/issues"
+  },
+  "homepage": "https://github.com/vedant2720/NGO_ATT#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1"
+  }
+}
