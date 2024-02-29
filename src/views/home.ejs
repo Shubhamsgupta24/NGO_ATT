@@ -1,19 +1,10 @@
-<html>
 
-<head>
-    <title>EJS Example</title>
-</head>
-
-<body>
-    <h1>Welcome to EJS!</h1>
-    <ul>
-        <% users.forEach(function(user){ %>
-            <li>
-                <%= user.full_name %>
-                <%= user.email %>     
-            </li>
-            <% }); %>
-    </ul>
-</body>
-
-</html>
+<h1>Welcome to EJS!</h1>
+<ul>
+    <% users.forEach(function(user){ %>
+        <li>
+            <%= user.full_name %>
+                <%= user.email %>
+        </li>
+        <% }); %>
+</ul>

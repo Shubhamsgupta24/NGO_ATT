@@ -12,7 +12,9 @@ class HomeController {
             return;
           }
     
-          res.render('home', { users: result });
+          res.render('home', { users: result ,
+            title:"home"
+          });
         });
       } catch (err) {
         console.log(err);
