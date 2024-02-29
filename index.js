@@ -8,6 +8,7 @@ const app = express();
 
 app.use(
   session({
+    name:'NGO',
     secret: 'SecretKey',
     resave: false,
     saveUninitialized: true,

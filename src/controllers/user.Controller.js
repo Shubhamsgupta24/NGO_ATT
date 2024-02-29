@@ -1,6 +1,7 @@
 const connection = require('../config/database');
 
-class UserController {
+class UserController 
+{
     signIn(req, res, next) {
         res.render('sign_in', {
             title: "sign in page"
@@ -11,6 +12,16 @@ class UserController {
         res.render('sign_up', {
             title: "sign up page"
         });
+    }
+
+    //destroy session
+    logout(req,res,next){
+        req.session.destroy((err)=>{
+            if(err){
+                console.log(err);
+            }
+            res.redirect('/user/sign_in');
+        })
     }
 
     createSession(req, res, next) 
@@ -31,7 +42,16 @@ class UserController {
             if (results.length > 0) {
                 // User with the requested email and password found
                 // Handle the success case here
+                req.session.email=email;
+                console.log(req.session.email);
+                console.log(req.session);
                 console.log('User found:', results[0]);
+                res.render('profile', {
+                    title: 'home page',
+                    users: results[0],
+                    email:req.session.email
+                });
+                return;
             } else {
                 // User not found or credentials are incorrect
                 // Handle the failure case here
