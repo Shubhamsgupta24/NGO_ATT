@@ -17,8 +17,12 @@ app.use(
 )
 
 // Middleware
-app.use(express.json());
 app.use(ejsLayouts);
+app.set('layout extractStyles',true);
+app.set('layout extractScript',true);
+app.use(express.static('./src/assets'));
+app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');

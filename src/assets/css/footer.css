@@ -1,0 +1,35 @@
+.government-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0; /* Reduced padding */
+    margin-top: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-section {
+    max-width: 250px; /* Reduced max-width */
+}
+
+.footer-section h2 {
+    font-size: 1em; /* Reduced font size */
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 3px; /* Reduced margin */
+    font-size: 0.9em; /* Reduced font size */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 15px; /* Reduced margin */
+    font-size: 0.8em; /* Reduced font size */
+}

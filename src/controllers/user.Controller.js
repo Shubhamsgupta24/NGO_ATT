@@ -44,9 +44,8 @@ class UserController {
                 console.log(req.session.email);
                 console.log(req.session);
                 console.log('User found:', results[0]);
-                res.render('profile', {
+                res.render('home', {
                     title: 'home page',
-                    users: results[0],
                     email: req.session.email
                 });
                 return;
@@ -57,8 +56,8 @@ class UserController {
             }
 
             // Render the sign-up page regardless of the result
-            res.render('sign_up', {
-                title: 'sign up page'
+            res.render('home', {
+                title: 'Home'
             });
         });
     }

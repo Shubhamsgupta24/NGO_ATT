@@ -1,9 +1,13 @@
 
-<header>
-    <% if (locals.email) { %>
-        <a href="/user/logout">Logout</a>
-    <% } else { %>
-        <a href="/user/sign_in">Sign In</a>
-        <a href="/user/sign_up">Sign Up</a>
-    <% } %>
+<link rel="stylesheet" href="/css/header.css">
+
+<header class="custom-header">
+    <div class="nav-links">
+        <% if (locals.email) { %>
+            <a href="/user/logout" class="nav-link">Logout</a>
+        <% } else { %>
+            <a href="/user/sign_in" class="nav-link">Sign In</a>
+            <a href="/user/sign_up" class="nav-link">Sign Up</a>
+        <% } %>
+    </div>
 </header>

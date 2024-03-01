@@ -1,0 +1,33 @@
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+.container {
+    margin-top: 5%;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.text-muted {
+    font-size: 14px;
+}
+
+.text-muted:hover {
+    color: #007bff;
+}
