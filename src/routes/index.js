@@ -6,7 +6,7 @@ const router=express.Router();
 const homeController = new HomeController();
 const auth=require('../middleware/auth.middleware');
 
-
+// here "auth" is acting as middleware for every request to home 
 router.get('/',auth,homeController.getinfo);
 router.use('/user', require('./user'));
 
