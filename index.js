@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const ejsLayouts = require('express-ejs-layouts');
 const connection = require('./src/config/database');
+const bodyParser = require('body-parser'); // Add this line
 const session = require('express-session');
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(ejsLayouts);
 app.set('layout extractStyles',true);
 // app.set('layout extractScript',true);
 app.use(express.static('./src/assets'));
+app.use(bodyParser.urlencoded({ extended: true })); // Add this line
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));

@@ -10,6 +10,7 @@ const auth=require('../middleware/auth.middleware');
 router.get('/',auth,homeController.HomeInfo);
 router.use('/user', require('./user'));
 router.use('/schools',require('./schools'));
+router.use('/admin', require('./admin'));
 
 module.exports=router;
 
