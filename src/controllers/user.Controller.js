@@ -22,7 +22,8 @@ class UserController {
     }
 
     //destroy session
-    logout(req, res, next) {
+    logout(req, res, next) 
+    {
         req.session.destroy((err) => {
             if (err) {
                 console.log(err);
@@ -31,7 +32,8 @@ class UserController {
         })
     }
 
-    createSession(req, res, next) {
+    createSession(req, res, next) 
+    {
         const email = req.body.email;
         const password = req.body.password;
 
@@ -86,7 +88,8 @@ class UserController {
                     });
                 } else {
                     res.render('home', {
-                        title: 'home page'
+                        title: 'Tribal Schools',
+                        email:req.session.email
                     });
                     return;
                 }

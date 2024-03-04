@@ -1,10 +1,149 @@
-
 <link rel="stylesheet" href="/css/home.css">
-<div class="image-container">
-    <% if(locals.email) { %>
-        <a href="#">Attendance</a>
-        <a href="/user/profile">Profile</a>
-    <% } %>
-    <img src="/images/logo.jpg" alt="Image description">
+
+<header>
+    <div class="navbar">
+        <marquee behavior="" direction="" width="60%">
+            <p style="color: white;margin-bottom: 70px; margin-left: 80px;">Maharashtra Education Portal : SARAL 2.0 -
+                Systematic Administrative Reforms for Achieving Learning by Students (Official Website)</p>
+        </marquee>
+        <div class="language-toggle">
+            <label class="toggle-container">
+                <input type="checkbox" id="language-toggle">
+                <div class="toggle-switch"></div>
+            </label>
+            <span class="toggle-label" style="margin-bottom: 60px; color: white;">English</span>
+            <span class="toggle-label marathi-text" style="margin-bottom: 60px; color: white;">मराठी</span>
+        </div>
+        <a href="" style="margin-bottom: 70px;">Helpdesk</a>
+    </div>
+
+
+    <div class="nav2">
+        <div class="left">
+            <img src="/images/mainlogo.png" alt="" style="height: 93px;margin-left: 120px;margin-top: 5px;">
+        </div>
+        <div class="right" style="display: flex; margin-left: 400px;">
+            <span class="material-symbols-outlined"
+                style="width: 40px;height: 40px;box-shadow: 0 2rem 3rem rgba(132,139,200,0.18);padding: 6px;color: blue; margin-top: 20px;">mail</span>
+            <div class="rightpart" style="margin-left: 2px;">
+                <p>Email Us:</p>
+                <a href="#" style="color: black;text-decoration: none;"><b>abc@gmail.com</b></a>
+            </div>
+            <div class="rightmost" style=>
+                <img src="/images/askokstambh.png" alt="">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="list">
+        <a href="">Home</a>
+        <a href="">About Us</a>
+        <a href="">Contact Us</a>
+        <a href="">Our projects</a>
+        <a href="">Key Persons</a>
+        <a href="">Log in</a>
+        <a href="">Register</a>
+
+    </div>
+
+
+</header>
+
+<main>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper" style="margin-left: 10px;">
+            <div class="swiper-slide">
+                <img src="/images/img2.png" />
+            </div>
+            <div class="swiper-slide">
+                <img src="/images/img1.png" />
+            </div>
+            <div class="swiper-slide">
+                <img src="/images/img3.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img src="/images/img4.webp" />
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</main>
+
+<h3 style="margin-left: 700px; margin-top: 50px;">Directors</h3>
+<div class="people">
+    <div class="details" style="margin-left: 150px;">
+        <img src="/images/person.jpg" alt="">
+        <p style="margin-left: 98px;"><b>Name</b></p>
+        <p style="margin-left: 99px; margin-top:-10px;">Post</p>
+    </div>
+
+    <div class="details">
+        <img src="/images/person.jpg" alt="">
+        <p style="margin-left: 98px;"><b>Name</b></p>
+        <p style="margin-left: 99px; margin-top:-10px;">Post</p>
+    </div>
+
+    <div class="details">
+        <img src="/images/person.jpg" alt="">
+        <p style="margin-left: 98px;"><b>Name</b></p>
+        <p style="margin-left: 99px; margin-top:-10px;">Post</p>
+    </div>
+
+    <div class="details">
+        <img src="/images/person.jpg" alt="">
+        <p style="margin-left: 98px;"><b>Name</b></p>
+        <p style="margin-left: 99px; margin-top:-10px;">Post</p>
+    </div>
 </div>
 
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>© हे शालेय शिक्षण व क्रीडा विभागाचे अधिकृत संकेतस्थळ आहे. सर्व हक्क सुरक्षित.</p>
+        <p>©2023 This is the official website of School Education and Sports Department, Govt of Maharashtra. All Rights
+            Reserved.</p>
+    </div>
+</footer>
+
+
+
+
+
+
+
+<script>
+    // JavaScript to handle language switch
+    document.getElementById('language-toggle').addEventListener('change', function () {
+        var languageLabels = document.querySelectorAll('.toggle-label');
+        for (var i = 0; i < languageLabels.length; i++) {
+            if (this.checked) {
+                languageLabels[i].textContent = 'मराठी'; // Change text to Marathi
+            } else {
+                languageLabels[i].textContent = 'English'; // Change text back to English
+            }
+        }
+    });
+</script>
+
+
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        effect: "fade",
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>

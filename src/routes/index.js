@@ -9,6 +9,7 @@ const auth=require('../middleware/auth.middleware');
 // here "auth" is acting as middleware for every request to home 
 router.get('/',auth,homeController.HomeInfo);
 router.use('/user', require('./user'));
+router.use('/schools',require('./schools'));
 
 module.exports=router;
 
