@@ -22,7 +22,7 @@ CREATE TABLE `ngo_mngt`.`student` (
   FOREIGN KEY (`school_id`) REFERENCES `ngo_mngt`.`schools`(`schools_id`)
 );
 
--- DROP TABLE IF EXISTS `ngo_mngt`.`student`;
+DROP TABLE IF EXISTS `ngo_mngt`.`student`;
   
 CREATE TABLE `ngo_mngt`.`schools` (
   `schools_id` INT NOT NULL AUTO_INCREMENT,
@@ -34,21 +34,21 @@ CREATE TABLE `ngo_mngt`.`schools` (
 
 INSERT INTO `ngo_mngt`.`student` (`stud_id`, `student_name`, `class`, `type`, `school_id`, `gender`) VALUES
 (1, 'राहुल जोशी', '1', 'आश्रमिक', 4, 'Male'),
-(2, 'सोनाली पवार', '2', 'विनासवळत', 5, 'Female'),
-(3, 'प्रज्ञा गायकवाड', '3', 'आश्रमिक', 6, 'Female'),
-(4, 'महेश ठोरात', '4', 'विनासवळत', 7, 'Male'),
+(2, 'सोनाली पवार', '2', 'विनासवळत', 4, 'Female'),
+(3, 'प्रज्ञा गायकवाड', '3', 'आश्रमिक', 4, 'Female'),
+(4, 'महेश ठोरात', '4', 'विनासवळत', 4, 'Male'),
 (5, 'अनुप्रिया मोहने', '5', 'आश्रमिक', 8, 'Female'),
-(6, 'अर्जुन पाटील', '6', 'विनासवळत', 9, 'Male'),
-(7, 'अंबिका पाटील', '7', 'आश्रमिक', 10, 'Female'),
-(8, 'सुभाष जाधव', '8', 'विनासवळत', 11, 'Male'),
+(6, 'अर्जुन पाटील', '6', 'विनासवळत', 8, 'Male'),
+(7, 'अंबिका पाटील', '7', 'आश्रमिक', 8, 'Female'),
+(8, 'सुभाष जाधव', '8', 'विनासवळत', 8, 'Male'),
 (9, 'सुनीता वाघ', '9', 'आश्रमिक', 12, 'Female'),
-(10, 'प्रियंका पुजारी', '10', 'विनासवळत', 13, 'Female'),
-(11, 'अश्विनी जाधव', '11', 'आश्रमिक', 14, 'Male'),
-(12, 'राजेश पाटील', '12', 'विनासवळत', 15, 'Male'),
-(13, 'स्वप्निल गव्हाणे', '1', 'आश्रमिक', 16, 'Male'),
-(14, 'दीपाली सोनारे', '2', 'विनासवळत', 17, 'Female'),
-(15, 'सुनिता पवार', '3', 'आश्रमिक', 18, 'Female'),
-(16, 'अरुण सापकार', '4', 'विनासवळत', 19, 'Male'),
+(10, 'प्रियंका पुजारी', '10', 'विनासवळत', 12, 'Female'),
+(11, 'अश्विनी जाधव', '11', 'आश्रमिक', 12, 'Male'),
+(12, 'राजेश पाटील', '12', 'विनासवळत', 12, 'Male'),
+(13, 'स्वप्निल गव्हाणे', '1', 'आश्रमिक', 12, 'Male'),
+(14, 'दीपाली सोनारे', '2', 'विनासवळत', 12, 'Female'),
+(15, 'सुनिता पवार', '3', 'आश्रमिक', 12, 'Female'),
+(16, 'अरुण सापकार', '4', 'विनासवळत', 12, 'Male'),
 (17, 'प्रदीप मांडवी', '5', 'आश्रमिक', 20, 'Male'),
 (18, 'अर्चना खडके', '6', 'विनासवळत', 21, 'Female'),
 (19, 'प्रिया जोशी', '7', 'आश्रमिक', 22, 'Female'),
@@ -103,6 +103,45 @@ VALUES
 ('त्रिशूल', 37, 0, 37),
 ('तेलखेडी', 37, 0, 37);
 
+CREATE TABLE `ngo_mngt`.attendance (
+  student_ID INT NOT NULL,
+  status VARCHAR(255) NOT NULL,  -- Removed single quotes around 'status'
+  type VARCHAR(255) NOT NULL,
+  school_ID INT NOT NULL,
+  attendance_date DATE NOT NULL,
+  PRIMARY KEY (student_ID),
+  FOREIGN KEY (student_ID) REFERENCES student(stud_id) ON DELETE CASCADE,
+  FOREIGN KEY (school_ID) REFERENCES schools(schools_id) ON DELETE CASCADE
+);
+
+  DROP TABLE ngo_mngt.attendance;
+
+
+-- entering dummy attendance data 
+
+-- Insert attendance data for day 1
+INSERT INTO ngo_mngt.attendance (student_ID, status, type, school_ID, attendance_date)
+VALUES
+(9, 'Present', 'आश्रमिक', 12, '2024-03-01'),
+(10, 'Absent', 'विनासवळत', 12, '2024-03-01'),
+(11, 'Present', 'आश्रमिक', 12, '2024-03-01'),
+(12, 'Absent', 'विनासवळत', 12, '2024-03-01');
+
+-- Insert attendance data for day 2
+INSERT INTO ngo_mngt.attendance (student_ID, status, type, school_ID, attendance_date)
+VALUES
+(1, 'Absent', 'आश्रमिक', 4, '2024-03-02'),
+(2, 'Present', 'विनासवळत', 4, '2024-03-02'),
+(3, 'Absent', 'आश्रमिक', 4, '2024-03-02'),
+(4, 'Present', 'विनासवळत', 4, '2024-03-02');
+
+-- Insert attendance data for day 3
+INSERT INTO ngo_mngt.attendance (student_ID, status, type, school_ID, attendance_date)
+VALUES
+(13, 'Present', 'आश्रमिक', 12, '2024-03-01'),
+(14, 'Absent', 'विनासवळत', 12, '2024-03-01'),
+(15, 'Present', 'आश्रमिक', 12, '2024-03-01'),
+(16, 'Absent', 'विनासवळत', 12, '2024-03-01');
 
 
 

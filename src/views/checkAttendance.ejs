@@ -1,169 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Dashboard Title</title>
-    <!-- Add your CSS and other external stylesheets here -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="/css/dash.css">
-    <link rel="icon" type="image/png/svg" href="fcc_secondary_small (1).svg">
-</head>
-
-<body>
-
-    <header>
-        <div class="navbar">
-            <div class="nav-search">
-                <div class="search-icon" style="color: white;">
-                    <span class="material-symbols-outlined">Search</span>
-                </div>
-                <input class="search-input" style="color: white;" placeholder="Search">
-            </div>
-            <div style="color: white; height: 30px; margin-right: 400px;">
-                <p>Government of Maharashtra</p>
-            </div>
-            <div class="logout">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            </div>
-            <div class="logoutp" style="color: white; margin-right: 150px; padding-top: 2px;"><a>Log Out</a></div>
-        </div>
-    </header>
-
-    <div class="container">
-        <aside>
-            <div class="top">
-                <div class="logo">
-                    <img src="/images/logo.png" alt="logo">
-                    <h2>School</h2>
-                </div>
-            </div>
-            <div class="sidebar">
-                <a href="/user/create-session">
-                    <span class="material-symbols-outlined">grid_view</span>
-                    <h3>Dashboard</h3>
-                </a>
-                <a href="#" onclick="getSchoolInfo()">
-                    <span class="material-symbols-outlined">school</span>
-                    <h3>Schools</h3>
-                </a>
-                <!-- Add other sidebar links as needed -->
-                <a href="#">
-                    <span class="material-symbols-outlined">mail</span>
-                    <h3>Messages</h3>
-                    <span class="msg-count">18</span>
-                </a>
-                <a href="#" onclick="showAttendanceForm()">
-                    <span class="material-symbols-outlined">group</span>
-                    <h3>Check Attendance</h3>
-                </a>
-                <a href="#">
-                    <span class="material-symbols-outlined">settings</span>
-                    <h3>Settings</h3>
-                </a>
-                <a href="/user/logout">
-                    <span class="material-symbols-outlined">logout</span>
-                    <h3>Log out</h3>
-                </a>
-            </div>
-        </aside>
-
-        <main>
-            <form id="attendance-form" method="post" action="/admin/attendance">
-                <div class="mb-3">
-                    <label for="school" class="form-label">School</label>
-                    <select id="school" name="school" class="form-select">
-                        <option value="शिर्वे">शिर्वे</option>
-                        <option value="लोभाणी">लोभाणी</option>
-                        <option value="सलसाडी">सलसाडी</option>
-                        <option value="अमोणी">अमोणी </option>
-                        <option value="राणीपूर">राणीपूर</option>
-                        <option value="बोरद">बोरद</option>
-                        <option value="जांभारइ">जांभारइ</option>
-                        <option value="इच्छागव्हाण">इच्छागव्हाण</option>
-                        <option value="भांगरापाणी">भांगरापाणी</option>
-                        <option value="नाला">नाला</option>
-                        <option value="कुंभारखान">कुंभारखान</option>
-                        <option value="अलिविहीर">अलिविहीर</option>
-                        <option value="बर्डी">बर्डी</option>
-                        <option value="भगदरी">भगदरी</option>
-                        <option value="दाब">दाब</option>
-                        <option value="तालंबा">तालंबा</option>
-                        <option value="मोरंबा">मोरंबा</option>
-                        <option value="होराफळी">होराफळी</option>
-                        <option value="वडफळी">वडफळी</option>
-                        <option value="सरी">सरी</option>
-                        <option value="खडकापाणी">खडकापाणी</option>
-                        <option value="कंकाळामाळ">कंकाळामाळ</option>
-                        <option value="जांगठी">जांभारइ</option>
-                        <option value="गमण">गमण</option>
-                        <option value="दहेल">दहेल</option>
-                        <option value="तोरणमाळ">तोरणमाळ</option>
-                        <option value="चुलवड">चुलवड</option>
-                        <option value="मांडवी">मांडवी</option>
-                        <option value="हातधुई">हातधुई</option>
-                        <option value="काकरदा">काकरदा</option>
-                        <option value="रोषमाळ">रोषमाळ</option>
-                        <option value="असली">असली</option>
-                        <option value="बिजरी">बिजरी</option>
-                        <option value="तलारइ">तलारइ</option>
-                        <option value="मोजरा">मोजरा</option>
-                        <option value="सोन खुर्द">सोन खुर्द</option>
-                        <option value="झापी">झापी</option>
-                        <option value="सिंदीदिगर">सिंदीदिगर</option>
-                        <option value="शेलगदा">शेलगदा</option>
-                        <option value="वलवाल">वलवाल</option>
-                        <option value="त्रिशूल">त्रिशूल</option>
-                        <option value="तेलखेडी">तेलखेडी</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="type" class="form-label">Type of student</label>
-                    <select id="type" name="type" class="form-select">
-                        <option value="आश्रमिक">आश्रमिक</option>
-                        <option value="विनासवळत">विनासवळत</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="startDate" class="form-label">Date</label>
-                    <input type="date" id="startDate" name="Date" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="type1" class="form-label">Type of student</label>
-                    <select id="type1" name="status" class="form-select">
-                        <option value="Present">Present</option>
-                        <option value="Absent">Absent</option>
-                    </select>
-                </div>
-                <div>
-                    <button type="submit" class="btn btn-primary">Search</button>
-                </div>
-            </form>
-            <div id="attendance-sheet">
-            </div>
-        </main>
+<form id="attendance-form" method="post">
+    <div class="mb-3">
+        <label for="school" class="form-label">School</label>
+        <select id="school" name="school" class="form-select">
+            <option value="शिर्वे">शिर्वे</option>
+            <option value="लोभाणी">लोभाणी</option>
+            <option value="सलसाडी">सलसाडी</option>
+            <option value="अमोणी">अमोणी </option>
+            <option value="राणीपूर">राणीपूर</option>
+            <option value="बोरद">बोरद</option>
+            <option value="जांभारइ">जांभारइ</option>
+            <option value="इच्छागव्हाण">इच्छागव्हाण</option>
+            <option value="भांगरापाणी">भांगरापाणी</option>
+            <option value="नाला">नाला</option>
+            <option value="कुंभारखान">कुंभारखान</option>
+            <option value="अलिविहीर">अलिविहीर</option>
+            <option value="बर्डी">बर्डी</option>
+            <option value="भगदरी">भगदरी</option>
+            <option value="दाब">दाब</option>
+            <option value="तालंबा">तालंबा</option>
+            <option value="मोरंबा">मोरंबा</option>
+            <option value="होराफळी">होराफळी</option>
+            <option value="वडफळी">वडफळी</option>
+            <option value="सरी">सरी</option>
+            <option value="खडकापाणी">खडकापाणी</option>
+            <option value="कंकाळामाळ">कंकाळामाळ</option>
+            <option value="जांगठी">जांभारइ</option>
+            <option value="गमण">गमण</option>
+            <option value="दहेल">दहेल</option>
+            <option value="तोरणमाळ">तोरणमाळ</option>
+            <option value="चुलवड">चुलवड</option>
+            <option value="मांडवी">मांडवी</option>
+            <option value="हातधुई">हातधुई</option>
+            <option value="काकरदा">काकरदा</option>
+            <option value="रोषमाळ">रोषमाळ</option>
+            <option value="असली">असली</option>
+            <option value="बिजरी">बिजरी</option>
+            <option value="तलारइ">तलारइ</option>
+            <option value="मोजरा">मोजरा</option>
+            <option value="सोन खुर्द">सोन खुर्द</option>
+            <option value="झापी">झापी</option>
+            <option value="सिंदीदिगर">सिंदीदिगर</option>
+            <option value="शेलगदा">शेलगदा</option>
+            <option value="वलवाल">वलवाल</option>
+            <option value="त्रिशूल">त्रिशूल</option>
+            <option value="तेलखेडी">तेलखेडी</option>
+        </select>
     </div>
+    <div class="mb-3">
+        <label for="type" class="form-label">Type of student</label>
+        <select id="type" name="type" class="form-select">
+            <option value="आश्रमिक">आश्रमिक</option>
+            <option value="विनासवळत">विनासवळत</option>
+            <option value="None">None</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="startDate" class="form-label">Date</label>
+        <input type="date" id="startDate" name="Date" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="type1" class="form-label">Type of student</label>
+        <select id="type1" name="status" class="form-select">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+            <option value="None">None</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+<div id="attendance-sheet">
+</div>
+<script>
+    $('#attendance-form').submit(function (event) {
+        // Prevent the form from submitting normally
+        event.preventDefault();
 
-    <script src="/js/dash.js"></script>
-    <script src="/js/attendance.js"></script>
-    <!-- Add your other scripts here, if any -->
+        // Get the form data
+        const formData = $(this).serialize();
 
-</body>
+        // Send the form data using AJAX
+        $.ajax({
+            url: '/admin/attendance',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                // Create h3 element with the total number of students and add margin-top
+                const totalStudentsH3 = $('<h3>Total Students: ' + response.rowCount + '</h3>').css('margin-top', '10px');
 
-</html>
+                // Append the h3 tag to the attendance-sheet div
+                $('#attendance-sheet').empty().append(totalStudentsH3);
+
+                // Create table element
+                const table = $('<table class="table"></table>');
+                table.css('max-width', $('main').width());
+
+                // Create table headers
+                const headers = ['Student Name', 'School', 'Date'];
+                const headerRow = $('<tr></tr>');
+                headers.forEach(header => {
+                    headerRow.append('<th>' + header + '</th>');
+                });
+                table.append(headerRow);
+
+                // Create table rows for each attendance record
+                response.data.forEach(attendance => {
+                    const row = $('<tr></tr>');
+                    row.append('<td>' + attendance.studentName + '</td>');
+                    row.append('<td>' + attendance.schoolName + '</td>');
+                    row.append('<td>' + attendance.attendanceDate.split('T')[0] + '</td>');
+                    table.append(row);
+                });
+
+                // Append the table to the attendance-sheet div
+                $('#attendance-sheet').append(table);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
+</script>
