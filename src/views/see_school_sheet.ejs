@@ -1,0 +1,217 @@
+<form id="see-attendance-form" method="post" action="/teacher/seeAttendance">
+    <div class="mb-3">
+        <label for="school" class="form-label">School</label>
+        <select id="school" name="school" class="form-select">
+            <option value="शिर्वे">शिर्वे</option>
+            <option value="लोभाणी">लोभाणी</option>
+            <option value="सलसाडी">सलसाडी</option>
+            <option value="अमोणी">अमोणी </option>
+            <option value="राणीपूर">राणीपूर</option>
+            <option value="बोरद">बोरद</option>
+            <option value="जांभारइ">जांभारइ</option>
+            <option value="इच्छागव्हाण">इच्छागव्हाण</option>
+            <option value="भांगरापाणी">भांगरापाणी</option>
+            <option value="नाला">नाला</option>
+            <option value="कुंभारखान">कुंभारखान</option>
+            <option value="अलिविहीर">अलिविहीर</option>
+            <option value="बर्डी">बर्डी</option>
+            <option value="भगदरी">भगदरी</option>
+            <option value="दाब">दाब</option>
+            <option value="तालंबा">तालंबा</option>
+            <option value="मोरंबा">मोरंबा</option>
+            <option value="होराफळी">होराफळी</option>
+            <option value="वडफळी">वडफळी</option>
+            <option value="सरी">सरी</option>
+            <option value="खडकापाणी">खडकापाणी</option>
+            <option value="कंकाळामाळ">कंकाळामाळ</option>
+            <option value="जांगठी">जांभारइ</option>
+            <option value="गमण">गमण</option>
+            <option value="दहेल">दहेल</option>
+            <option value="तोरणमाळ">तोरणमाळ</option>
+            <option value="चुलवड">चुलवड</option>
+            <option value="मांडवी">मांडवी</option>
+            <option value="हातधुई">हातधुई</option>
+            <option value="काकरदा">काकरदा</option>
+            <option value="रोषमाळ">रोषमाळ</option>
+            <option value="असली">असली</option>
+            <option value="बिजरी">बिजरी</option>
+            <option value="तलारइ">तलारइ</option>
+            <option value="मोजरा">मोजरा</option>
+            <option value="सोन खुर्द">सोन खुर्द</option>
+            <option value="झापी">झापी</option>
+            <option value="सिंदीदिगर">सिंदीदिगर</option>
+            <option value="शेलगदा">शेलगदा</option>
+            <option value="वलवाल">वलवाल</option>
+            <option value="त्रिशूल">त्रिशूल</option>
+            <option value="तेलखेडी">तेलखेडी</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="startDate" class="form-label">Date</label>
+        <input type="date" id="startDate" name="Date" class="form-control">
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+<div id="attendance-sheet">
+</div>
+
+<script>
+    $('#see-attendance-form').submit(function (event) {
+        // Prevent the form from submitting normally
+        event.preventDefault();
+
+        // Serialize the form data
+        var formData = $(this).serialize();
+
+        $.ajax({
+            url: '/teacher/seeAttendance',
+            type: 'POST',
+            data: formData, // Send the serialized form data
+            success: function (response) {
+                // Clear the existing content in the main section
+
+                // Check if the response data is not empty
+                if (response.data.length > 0) {
+                    // Create a table element
+                    const jsonData = response.data;
+
+                    const totalStudentsH3 = $('<h3>Date: ' + response.data.attendance_date + 1 + '</h3>').css('margin-top', '10px');
+                    $('#attendance-sheet').append(totalStudentsH3);
+
+                    var table = $('<table>').addClass('attendance-table');
+
+                    // Create table header
+                    var headerRow = $('<tr>');
+                    headerRow.append('<th style="padding: 8px;">School Name</th>');
+                    headerRow.append('<th style="padding: 8px;">Gender</th>');
+                    headerRow.append('<th style="padding: 8px; width: 110px;">Type</th>');
+                    headerRow.append('<th style="padding: 8px;">1</th>');
+                    headerRow.append('<th style="padding: 8px;">2</th>');
+                    headerRow.append('<th style="padding: 8px;">3</th>');
+                    headerRow.append('<th style="padding: 8px;">4</th>');
+                    headerRow.append('<th style="padding: 8px;">5</th>');
+                    headerRow.append('<th style="padding: 8px;">6</th>');
+                    headerRow.append('<th style="padding: 8px;">7</th>');
+                    headerRow.append('<th style="padding: 8px;">8</th>');
+                    headerRow.append('<th style="padding: 8px;">9</th>');
+                    headerRow.append('<th style="padding: 8px;">10</th>');
+                    headerRow.append('<th style="padding: 8px;">11</th>');
+                    headerRow.append('<th style="padding: 8px;">12</th>');
+                    headerRow.append('<th style="padding: 8px;">Total</th>');
+                    // ... (Add other header columns based on your table structure)
+
+                    table.append(headerRow);
+
+                    // Iterate through the response data and populate the table
+                    $.each(response.data, function (index, attendance) {
+                        var row = $('<tr>');
+                        row.append('<td><input type="text" value="' + attendance.school_name + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance.gender + '" readonly></td>');
+                        row.append('<td><input type="text" value="' + attendance.type + '" readonly></td>');
+                        row.append('<td><input type="text" value="' + attendance['1'] + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance['2'] + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance['3'] + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance['4'] + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance['5'] + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance['6'] + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance['7'] + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance['8'] + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance['9'] + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance['10'] + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance['11'] + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance['12'] + '"></td>');
+                        row.append('<td><input type="text" value="' + attendance['total'] + '"></td>');
+                        // ... (Add other columns based on your table structure)
+
+                        // Add an update button in each row
+                        var updateButton = $('<button>').text('Update').addClass('update-btn');
+                        updateButton.on('click', function () {
+                            // Implement your update logic here
+                            // You may want to retrieve the updated values from the input fields
+                            var updatedSchoolName = row.find('input').eq(0).val();
+                            var updatedValue1 = row.find('input').eq(3).val();
+                            var updatedValue2 = row.find('input').eq(4).val();
+                            var updatedValue3 = row.find('input').eq(5).val();
+                            var updatedValue4 = row.find('input').eq(6).val();
+                            var updatedValue5 = row.find('input').eq(7).val();
+                            var updatedValue6 = row.find('input').eq(8).val();
+                            var updatedValue7 = row.find('input').eq(9).val();
+                            var updatedValue8 = row.find('input').eq(10).val();
+                            var updatedValue9 = row.find('input').eq(11).val();
+                            var updatedValue10 = row.find('input').eq(12).val();
+                            var updatedValue11 = row.find('input').eq(13).val();
+                            var updatedValue12 = row.find('input').eq(14).val();
+
+                            console.log('Update clicked for ' + updatedSchoolName);
+                            console.log('Updated Value 1: ' + updatedValue1);
+                            console.log('Updated Value 2: ' + updatedValue2);
+                            console.log('Updated Value 3: ' + updatedValue3);
+                            console.log('Updated Value 4: ' + updatedValue4);
+                            console.log('Updated Value 5: ' + updatedValue5);
+                            console.log('Updated Value 6: ' + updatedValue6);
+                            console.log('Updated Value 7: ' + updatedValue7);
+                            console.log('Updated Value 8: ' + updatedValue8);
+                            console.log('Updated Value 9: ' + updatedValue9);
+                            console.log('Updated Value 10: ' + updatedValue10);
+                            console.log('Updated Value 11: ' + updatedValue11);
+                            console.log('Updated Value 12: ' + updatedValue12);
+                            console.log(attendance.attendance_date);
+
+                            $.ajax({
+                                url: '/teacher/updated_sheet',
+                                method: 'POST', // You can change the method as needed
+                                data: {
+                                    schoolName: updatedSchoolName,
+                                    attendanceDate: attendance.attendance_date,
+                                    gender: attendance.gender,
+                                    type: attendance.type,
+                                    value1: updatedValue1,
+                                    value2: updatedValue2,
+                                    value3: updatedValue3,
+                                    value4: updatedValue4,
+                                    value5: updatedValue5,
+                                    value6: updatedValue6,
+                                    value7: updatedValue7,
+                                    value8: updatedValue8,
+                                    value9: updatedValue9,
+                                    value10: updatedValue10,
+                                    value11: updatedValue11,
+                                    value12: updatedValue12
+                                },
+                                success: function (response) {
+                                    // Handle success response if needed
+                                    console.log('Update successful:', response);
+                                },
+                                error: function (error) {
+                                    // Handle error response if needed
+                                    console.error('Update failed:', error);
+                                }
+                            });
+                        });
+
+                        // Append the update button to the row
+                        row.append($('<td>').append(updateButton));
+
+                        // Append the row to the table
+                        table.append(row);
+                    });
+
+
+                    // Append the table to the main section
+                    $('#attendance-sheet').append(table);
+                } else {
+                    // Handle the case when there is no data to display
+                    $('main').append('<p>No attendance data available.</p>');
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+
+    });
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>

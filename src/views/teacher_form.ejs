@@ -1,0 +1,201 @@
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        /* Adjust the margin as needed */
+    }
+
+    .table th,
+    .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: #f2f2f2;
+        /* Add a background color to table headers */
+    }
+
+    .checkbox-cell {
+        text-align: center;
+    }
+</style>
+
+<form id="attendance-form" method="post">
+    <div class="mb-3">
+        <label for="school" class="form-label">School</label>
+        <select id="school" name="school" class="form-select">
+            <option value="शिर्वे">शिर्वे</option>
+            <option value="लोभाणी">लोभाणी</option>
+            <option value="सलसाडी">सलसाडी</option>
+            <option value="अमोणी">अमोणी </option>
+            <option value="राणीपूर">राणीपूर</option>
+            <option value="बोरद">बोरद</option>
+            <option value="जांभारइ">जांभारइ</option>
+            <option value="इच्छागव्हाण">इच्छागव्हाण</option>
+            <option value="भांगरापाणी">भांगरापाणी</option>
+            <option value="नाला">नाला</option>
+            <option value="कुंभारखान">कुंभारखान</option>
+            <option value="अलिविहीर">अलिविहीर</option>
+            <option value="बर्डी">बर्डी</option>
+            <option value="भगदरी">भगदरी</option>
+            <option value="दाब">दाब</option>
+            <option value="तालंबा">तालंबा</option>
+            <option value="मोरंबा">मोरंबा</option>
+            <option value="होराफळी">होराफळी</option>
+            <option value="वडफळी">वडफळी</option>
+            <option value="सरी">सरी</option>
+            <option value="खडकापाणी">खडकापाणी</option>
+            <option value="कंकाळामाळ">कंकाळामाळ</option>
+            <option value="जांगठी">जांभारइ</option>
+            <option value="गमण">गमण</option>
+            <option value="दहेल">दहेल</option>
+            <option value="तोरणमाळ">तोरणमाळ</option>
+            <option value="चुलवड">चुलवड</option>
+            <option value="मांडवी">मांडवी</option>
+            <option value="हातधुई">हातधुई</option>
+            <option value="काकरदा">काकरदा</option>
+            <option value="रोषमाळ">रोषमाळ</option>
+            <option value="असली">असली</option>
+            <option value="बिजरी">बिजरी</option>
+            <option value="तलारइ">तलारइ</option>
+            <option value="मोजरा">मोजरा</option>
+            <option value="सोन खुर्द">सोन खुर्द</option>
+            <option value="झापी">झापी</option>
+            <option value="सिंदीदिगर">सिंदीदिगर</option>
+            <option value="शेलगदा">शेलगदा</option>
+            <option value="वलवाल">वलवाल</option>
+            <option value="त्रिशूल">त्रिशूल</option>
+            <option value="तेलखेडी">तेलखेडी</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="type2" class="form-label">Class</label>
+        <select id="type2" name="year" class="form-select">
+            <option value="1">पहिली</option>
+            <option value="2">दुसरी</option>
+            <option value="3">तिसरी</option>
+            <option value="4">चौथी</option>
+            <option value="5">पाचवी</option>
+            <option value="6">सहावी</option>
+            <option value="7">सातवी</option>
+            <option value="8">आठवी</option>
+            <option value="9">नवमी</option>
+            <option value="10">दहावी</option>
+            <option value="11">11th</option>
+            <option value="12">बारावी</option>
+            <option value="None">None</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+<div id="attendance-sheet">
+</div>
+
+<script>
+    $('#attendance-form').submit(function (event) {
+        // Prevent the form from submitting normally
+        event.preventDefault();
+
+        // Get the form data
+        const formData = $(this).serialize();
+
+        // Send the form data using AJAX
+        $.ajax({
+            url: '/teacher/attendance',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                // Create form for recording individual attendance
+                const individualAttendanceForm = $('<form id="individual-attendance-form"></form>').attr('action', '/teacher/record-attendance').attr('method', 'post');
+
+                const dateLabel = $('<label for="attendanceDate" style="font-size: 18px; display: block; margin-bottom: 5px;margin-top: 15px;">Attendance Date:</label>');
+                individualAttendanceForm.append(dateLabel);
+
+                // Create input for date with increased size and margin-top
+                const dateInput = $('<input type="date" name="attendanceDate" required>').css('margin-bottom', '10px').css('margin-top', '3px').css('font-size', '18px');
+                individualAttendanceForm.append(dateInput);
+
+                // Create table element with inline styles
+                const table = $('<table style="width:100%; border-collapse: collapse; margin-top: 20px; border: 1px solid #ddd;"></table>');
+                table.css('max-width', $('main').width());
+
+                // Create table headers with inline styles
+                const headers = ['Sr.No', 'Student Name', 'Class', 'Present'];
+                const headerRow = $('<tr style="background-color: #f2f2f2; text-align: center;"></tr>');
+                headers.forEach(header => {
+                    headerRow.append('<th style="border: 1px solid #ddd; padding: 8px;">' + header + '</th>');
+                });
+                table.append(headerRow);
+
+                // Create table rows for each attendance record
+                response.data.forEach((attendance, index) => {
+                    const row = $('<tr style="text-align: center;"></tr>');
+                    row.append('<td>' + (index + 1) + '</td>');
+                    row.append('<td>' + attendance.studentName + '</td>');
+                    row.append('<td>' + attendance.class + '</td>');
+
+                    const typeInput = $('<input type="hidden" name="types[]" value="' + attendance.type + '">');
+                    row.append(typeInput);
+
+                    // Hidden input for student ID
+                    const studentIdInput = $('<input type="hidden" name="students[]" value="' + attendance.stud_id + '">');
+                    row.append(studentIdInput);
+
+                    // Hidden input for school ID
+                    const schoolIdInput = $('<input type="hidden" name="schools[]" value="' + attendance.schools_id + '">');
+                    row.append(schoolIdInput);
+
+                    // Create checkbox for each student with increased size
+                    const checkbox = $('<input type="checkbox" name="attendanceStatus[' + attendance.stud_id + ']" value="Present" style="margin-right: 5px; transform: scale(1.5);">');
+                    row.append($('<td style="border: 1px solid #ddd; padding: 8px;"></td>').append(checkbox));
+
+                    // Only add the "Absent" hidden input if the checkbox is unchecked
+                    const absentInput = $('<input type="hidden" name="attendanceStatus[' + attendance.stud_id + ']" value="Absent">');
+                    row.append(absentInput);
+
+                    // Add a change event listener to the checkbox
+                    checkbox.change(function () {
+                        if ($(this).is(':checked')) {
+                            // If checked, set the value of the corresponding hidden input to an empty string
+                            absentInput.val('');
+                        } else {
+                            // If unchecked, set the value of the corresponding hidden input to "Absent"
+                            absentInput.val('Absent');
+                        }
+                    });
+
+                    table.append(row);
+                });
+
+                // Append the table to the form
+                individualAttendanceForm.append(table);
+
+                // Append the form to the attendance-sheet div
+                $('#attendance-sheet').empty().append(individualAttendanceForm);
+
+                // Append a submit button for individual attendance with inline styles
+                const submitButton = $('<input type="submit" value="Record Attendance">');
+                submitButton.css({
+                    'margin-top': '10px',
+                    'font-size': '18px',
+                    'padding': '10px',
+                    'background-color': '#4CAF50',
+                    'color': 'white',
+                    'border': 'none',
+                    'border-radius': '5px',
+                    'cursor': 'pointer'
+                });
+
+                individualAttendanceForm.append(submitButton);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
+</script>

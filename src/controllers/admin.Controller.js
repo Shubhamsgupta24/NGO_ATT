@@ -12,7 +12,7 @@ class AdminController {
     {
         try {
             // Access form data from the request object
-            const { school, type, Date, status } = req.body;
+            const { school, type, Date, status,year,gender } = req.body;
             console.log(req.body);
     
             // SQL query to retrieve data from joined tables
@@ -22,7 +22,8 @@ class AdminController {
                   sc.school_name AS schoolName,
                   a.type AS attendanceType,
                   a.attendance_date AS attendanceDate,
-                  a.status AS attendanceStatus
+                  a.status AS attendanceStatus,
+                  s.gender AS gender
               FROM
                   attendance a
               JOIN
@@ -31,18 +32,28 @@ class AdminController {
                   schools sc ON s.school_id = sc.schools_id
               WHERE
                   sc.school_name = ? AND
-                  a.attendance_date BETWEEN ? AND NOW()`;
+                  a.attendance_date = ?`;
     
             // Dynamically add the status filter only if it is not 'None'
-            const queryParams = [school, type, Date];
-            if (type !== 'None' && type !== null) {
+            const queryParams = [school, Date];
+            if (type !== 'None') {
                 query += ' AND a.type = ?';
                 queryParams.push(type);
             }
-            
-            if (status && status !== 'None') {
+
+            if (status !== 'None') {
                 query += ' AND a.status = ?';
                 queryParams.push(status);
+            }
+
+            if (year !== 'None') {
+                query += ' AND s.class = ?';
+                queryParams.push(year);
+            }
+
+            if (gender !== 'None') {
+                query += ' AND s.gender = ?';
+                queryParams.push(gender);
             }
     
             // Execute the query with the provided parameters

@@ -51,6 +51,7 @@
         <select id="type" name="type" class="form-select">
             <option value="आश्रमिक">आश्रमिक</option>
             <option value="विनासवळत">विनासवळत</option>
+            <option value="डेस्कॉलर">डेस्कॉलर</option>
             <option value="None">None</option>
         </select>
     </div>
@@ -59,10 +60,36 @@
         <input type="date" id="startDate" name="Date" class="form-control">
     </div>
     <div class="mb-3">
-        <label for="type1" class="form-label">Type of student</label>
+        <label for="type1" class="form-label">Attendance Status</label>
         <select id="type1" name="status" class="form-select">
             <option value="Present">Present</option>
             <option value="Absent">Absent</option>
+            <option value="None">None</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="type2" class="form-label">Class</label>
+        <select id="type2" name="year" class="form-select">
+            <option value="1">पहिली</option>
+            <option value="2">दुसरी</option>
+            <option value="3">तिसरी</option>
+            <option value="4">चौथी</option>
+            <option value="5">पाचवी</option>
+            <option value="6">सहावी</option>
+            <option value="7">सातवी</option>
+            <option value="8">आठवी</option>
+            <option value="9">नवमी</option>
+            <option value="10">दहावी</option>
+            <option value="11">11th</option>
+            <option value="12">बारावी</option>
+            <option value="None">None</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="type3" class="form-label">Attendance Status</label>
+        <select id="type3" name="gender" class="form-select">
+            <option value="Male">मुले</option>
+            <option value="Female">मुली</option>
             <option value="None">None</option>
         </select>
     </div>
@@ -72,6 +99,7 @@
 </form>
 <div id="attendance-sheet">
 </div>
+
 <script>
     $('#attendance-form').submit(function (event) {
         // Prevent the form from submitting normally
@@ -97,7 +125,7 @@
                 table.css('max-width', $('main').width());
 
                 // Create table headers
-                const headers = ['Student Name', 'School', 'Date'];
+                const headers = ['Student Name', 'School', 'Date','Gender'];
                 const headerRow = $('<tr></tr>');
                 headers.forEach(header => {
                     headerRow.append('<th>' + header + '</th>');
@@ -110,6 +138,7 @@
                     row.append('<td>' + attendance.studentName + '</td>');
                     row.append('<td>' + attendance.schoolName + '</td>');
                     row.append('<td>' + attendance.attendanceDate.split('T')[0] + '</td>');
+                    row.append('<td>' + attendance.gender + '</td>');
                     table.append(row);
                 });
 

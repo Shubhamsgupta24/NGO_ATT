@@ -58,6 +58,9 @@ INSERT INTO `ngo_mngt`.`student` (`stud_id`, `student_name`, `class`, `type`, `s
 (23, 'मेघा खोपकर', '11', 'आश्रमिक', 26, 'Female'),
 (24, 'संजय चुलवडे', '12', 'विनासवळत', 27, 'Male');
 
+UPDATE `ngo_mngt`.`student` SET `class` = '10' WHERE (`stud_id` = '11');
+UPDATE `ngo_mngt`.`student` SET `class` = '10' WHERE (`stud_id` = '12');
+
 INSERT INTO ngo_mngt.schools (school_name, boys, girls, total)
 VALUES
 ('शिर्वे', 29, 0, 29),
@@ -109,12 +112,11 @@ CREATE TABLE `ngo_mngt`.attendance (
   type VARCHAR(255) NOT NULL,
   school_ID INT NOT NULL,
   attendance_date DATE NOT NULL,
-  PRIMARY KEY (student_ID),
   FOREIGN KEY (student_ID) REFERENCES student(stud_id) ON DELETE CASCADE,
   FOREIGN KEY (school_ID) REFERENCES schools(schools_id) ON DELETE CASCADE
 );
 
-  DROP TABLE ngo_mngt.attendance;
+DROP TABLE ngo_mngt.attendance;
 
 
 -- entering dummy attendance data 
@@ -143,7 +145,7 @@ VALUES
 (15, 'Present', 'आश्रमिक', 12, '2024-03-01'),
 (16, 'Absent', 'विनासवळत', 12, '2024-03-01');
 
-
+ 
 
 
   

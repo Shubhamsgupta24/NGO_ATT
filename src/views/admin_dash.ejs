@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="sidebar">
-                <a href="/user/create-session">
+                <a href="#" onclick="refreshPage()">
                     <span class="material-symbols-outlined">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
@@ -74,8 +74,12 @@
                     <h3>Check Attendance</h3>
                 </a>
                 <a href="#">
-                    <span class="material-symbols-outlined">settings</span>
-                    <h3>Settings</h3>
+                    <span class="material-symbols-outlined">school</span>
+                    <h3>Add School</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-outlined">school</span>
+                    <h3>Delete School</h3>
                 </a>
                 <a href="/user/logout">
                     <span class="material-symbols-outlined">logout</span>
@@ -126,6 +130,11 @@
     </div>
 
     <script src="/js/dash.js"></script>
+    <script>
+        function refreshPage() {
+            location.reload();
+        }
+    </script>
     <!-- Add your other scripts here, if any -->
 
 </body>

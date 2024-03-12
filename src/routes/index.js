@@ -11,6 +11,8 @@ router.get('/',auth,homeController.HomeInfo);
 router.use('/user', require('./user'));
 router.use('/schools',require('./schools'));
 router.use('/admin', require('./admin'));
+router.use('/teacher', require('./teacher'));
+router.post("/downloadExcel",homeController.download);
 
 module.exports=router;
 

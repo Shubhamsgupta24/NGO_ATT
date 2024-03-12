@@ -1,0 +1,360 @@
+<form action="/teacher/attendance" method="POST" class="form-container" id="fillAttendance_container">
+    <div>
+        <label for="attendanceDate<%= i %>">Attendance Date:</label>
+        <input type="date" id="attendanceDate<%= i %>" name="attendanceDate" required>
+
+        <h3>
+            हजर संख्या
+        </h3>
+
+        <div class="mb-3">
+            <label for="school" class="form-label">School</label>
+            <select id="school" name="school" class="form-select">
+                <option value="शिर्वे">शिर्वे</option>
+                <option value="लोभाणी">लोभाणी</option>
+                <option value="सलसाडी">सलसाडी</option>
+                <option value="अमोणी">अमोणी </option>
+                <option value="राणीपूर">राणीपूर</option>
+                <option value="बोरद">बोरद</option>
+                <option value="जांभारइ">जांभारइ</option>
+                <option value="इच्छागव्हाण">इच्छागव्हाण</option>
+                <option value="भांगरापाणी">भांगरापाणी</option>
+                <option value="नाला">नाला</option>
+                <option value="कुंभारखान">कुंभारखान</option>
+                <option value="अलिविहीर">अलिविहीर</option>
+                <option value="बर्डी">बर्डी</option>
+                <option value="भगदरी">भगदरी</option>
+                <option value="दाब">दाब</option>
+                <option value="तालंबा">तालंबा</option>
+                <option value="मोरंबा">मोरंबा</option>
+                <option value="होराफळी">होराफळी</option>
+                <option value="वडफळी">वडफळी</option>
+                <option value="सरी">सरी</option>
+                <option value="खडकापाणी">खडकापाणी</option>
+                <option value="कंकाळामाळ">कंकाळामाळ</option>
+                <option value="जांगठी">जांभारइ</option>
+                <option value="गमण">गमण</option>
+                <option value="दहेल">दहेल</option>
+                <option value="तोरणमाळ">तोरणमाळ</option>
+                <option value="चुलवड">चुलवड</option>
+                <option value="मांडवी">मांडवी</option>
+                <option value="हातधुई">हातधुई</option>
+                <option value="काकरदा">काकरदा</option>
+                <option value="रोषमाळ">रोषमाळ</option>
+                <option value="असली">असली</option>
+                <option value="बिजरी">बिजरी</option>
+                <option value="तलारइ">तलारइ</option>
+                <option value="मोजरा">मोजरा</option>
+                <option value="सोन खुर्द">सोन खुर्द</option>
+                <option value="झापी">झापी</option>
+                <option value="सिंदीदिगर">सिंदीदिगर</option>
+                <option value="शेलगदा">शेलगदा</option>
+                <option value="वलवाल">वलवाल</option>
+                <option value="त्रिशूल">त्रिशूल</option>
+                <option value="तेलखेडी">तेलखेडी</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <label for="students-female-g1">Gender:Female</label>
+        <input type="text" id="students-female-g1" name="Gender1" value="Female" required hidden>
+        <label for="students-female-g2">Type:आश्रमिक</label>
+        <input input type="text" id="students-female-g1" name="type1" value="आश्रमिक" required hidden>
+
+        <label for="students-female-g1">Students in Grade 1:</label>
+        <input type="number" id="students-female-g1" name="students1" required>
+
+        <label for="students-female-g2">Students in Grade 2:</label>
+        <input type="number" id="students-female-g2" name="students2" required>
+
+        <label for="students-female-g3">Students in Grade 3:</label>
+        <input type="number" id="students-female-g3" name="students3" required>
+
+        <label for="students-female-g4">Students in Grade 4:</label>
+        <input type="number" id="students-female-g4" name="students4" required>
+
+        <label for="students-female-g5">Students in Grade 5:</label>
+        <input type="number" id="students-female-g5" name="students5" required>
+
+        <label for="students-female-g6">Students in Grade 6:</label>
+        <input type="number" id="students-female-g6" name="students6" required>
+
+        <label for="students-female-g7">Students in Grade 7:</label>
+        <input type="number" id="students-female-g7" name="students7" required>
+
+        <label for="students-female-g8">Students in Grade 8:</label>
+        <input type="number" id="students-female-g8" name="students8" required>
+
+        <label for="students-female-g9">Students in Grade 9:</label>
+        <input type="number" id="students-female-g9" name="students9" required>
+
+        <label for="students-female-g10">Students in Grade 10:</label>
+        <input type="number" id="students-female-g10" name="students10" required>
+
+        <label for="students-female-g11">Students in Grade 11:</label>
+        <input type="number" id="students-female-g11" name="students11" required>
+
+        <label for="students-female-g12">Students in Grade 12:</label>
+        <input type="number" id="students-female-g12" name="students12" required>
+    </div>
+
+    <!-- Repeat the following block for each grade -->
+<div>
+
+    <label for="students-female-g3">Gender:Female</label>
+    <input type="text" id="students-female-g3" name="Gender2" value="Female" required hidden>
+    <label for="students-female-g4">Type:विनासवळत</label>
+    <input input type="text" id="students-female-g4" name="type2" value="विनासवळत" required hidden>
+
+    <label for="students-female-g13">Students in Grade 1:</label>
+    <input type="number" id="students-female-g13" name="students13" required>
+
+    <label for="students-female-g14">Students in Grade 2:</label>
+    <input type="number" id="students-female-g14" name="students14" required>
+
+    <label for="students-female-g15">Students in Grade 3:</label>
+    <input type="number" id="students-female-g15" name="students15" required>
+
+    <label for="students-female-g16">Students in Grade 4:</label>
+    <input type="number" id="students-female-g16" name="students16" required>
+
+    <label for="students-female-g17">Students in Grade 5:</label>
+    <input type="number" id="students-female-g17" name="students17" required>
+
+    <label for="students-female-g18">Students in Grade 6:</label>
+    <input type="number" id="students-female-g18" name="students18" required>
+
+    <label for="students-female-g19">Students in Grade 7:</label>
+    <input type="number" id="students-female-g19" name="students19" required>
+
+    <label for="students-female-g20">Students in Grade 8:</label>
+    <input type="number" id="students-female-g20" name="students20" required>
+
+    <label for="students-female-g21">Students in Grade 9:</label>
+    <input type="number" id="students-female-g21" name="students21" required>
+
+    <label for="students-female-g22">Students in Grade 10:</label>
+    <input type="number" id="students-female-g22" name="students22" required>
+
+    <label for="students-female-g23">Students in Grade 11:</label>
+    <input type="number" id="students-female-g23" name="students23" required>
+
+    <label for="students-female-g24">Students in Grade 12:</label>
+    <input type="number" id="students-female-g24" name="students24" required>
+</div>
+
+<div>
+    <label for="students-female-g5">Gender:Female</label>
+    <input type="text" id="students-female-g5" name="Gender3" value="Female" required hidden>
+    <label for="students-female-g6">Type:डेस्कॉलर</label>
+    <input input type="text" id="students-female-g6" name="type3" value="डेस्कॉलर" required hidden>
+
+    <label for="students-female-g25">Students in Grade 1:</label>
+    <input type="number" id="students-female-g25" name="students25" required>
+
+    <label for="students-female-g26">Students in Grade 2:</label>
+    <input type="number" id="students-female-g26" name="students26" required>
+
+    <label for="students-female-g27">Students in Grade 3:</label>
+    <input type="number" id="students-female-g27" name="students27" required>
+
+    <label for="students-female-g28">Students in Grade 4:</label>
+    <input type="number" id="students-female-g28" name="students28" required>
+
+    <label for="students-female-g29">Students in Grade 5:</label>
+    <input type="number" id="students-female-g29" name="students29" required>
+
+    <label for="students-female-g30">Students in Grade 6:</label>
+    <input type="number" id="students-female-g30" name="students30" required>
+
+    <label for="students-female-g31">Students in Grade 7:</label>
+    <input type="number" id="students-female-g31" name="students31" required>
+
+    <label for="students-female-g32">Students in Grade 8:</label>
+    <input type="number" id="students-female-g32" name="students32" required>
+
+    <label for="students-female-g33">Students in Grade 9:</label>
+    <input type="number" id="students-female-g33" name="students33" required>
+
+    <label for="students-female-g34">Students in Grade 10:</label>
+    <input type="number" id="students-female-g34" name="students34" required>
+
+    <label for="students-female-g35">Students in Grade 11:</label>
+    <input type="number" id="students-female-g35" name="students35" required>
+
+    <label for="students-female-g36">Students in Grade 12:</label>
+    <input type="number" id="students-female-g36" name="students36" required>
+</div>
+
+<div>
+
+    <label for="students-female-g7">Gender:Male</label>
+    <input type="text" id="students-female-g7" name="Gender4" value="Male" required hidden>
+    <label for="students-female-g8">Type:आश्रमिक</label>
+    <input input type="text" id="students-female-g8" name="type4" value="आश्रमिक" required hidden>
+
+    <label for="students-female-g37">Students in Grade 1:</label>
+    <input type="number" id="students-female-g37" name="students37" required>
+
+    <label for="students-female-g38">Students in Grade 2:</label>
+    <input type="number" id="students-female-g38" name="students38" required>
+
+    <label for="students-female-g39">Students in Grade 3:</label>
+    <input type="number" id="students-female-g39" name="students39" required>
+
+    <label for="students-female-g40">Students in Grade 4:</label>
+    <input type="number" id="students-female-g40" name="students40" required>
+
+    <label for="students-female-g41">Students in Grade 5:</label>
+    <input type="number" id="students-female-g41" name="students41" required>
+
+    <label for="students-female-g42">Students in Grade 6:</label>
+    <input type="number" id="students-female-g42" name="students42" required>
+
+    <label for="students-female-g43">Students in Grade 7:</label>
+    <input type="number" id="students-female-g43" name="students43" required>
+
+    <label for="students-female-g44">Students in Grade 8:</label>
+    <input type="number" id="students-female-g44" name="students44" required>
+
+    <label for="students-female-g45">Students in Grade 9:</label>
+    <input type="number" id="students-female-g45" name="students45" required>
+
+    <label for="students-female-g46">Students in Grade 10:</label>
+    <input type="number" id="students-female-g46" name="students46" required>
+
+    <label for="students-female-g47">Students in Grade 11:</label>
+    <input type="number" id="students-female-g47" name="students47" required>
+
+    <label for="students-female-g48">Students in Grade 12:</label>
+    <input type="number" id="students-female-g48" name="students48" required>
+</div>
+
+<div>
+
+    <label for="students-female-g9">Gender:Male</label>
+    <input type="text" id="students-female-g9" name="Gender5" value="Male" required hidden>
+    <label for="students-female-g10">Type:विनासवळत</label>
+    <input input type="text" id="students-female-g10" name="type5" value="विनासवळत" required hidden>
+
+    <label for="students-female-g49">Students in Grade 1:</label>
+    <input type="number" id="students-female-g49" name="students49" required>
+
+    <label for="students-female-g50">Students in Grade 2:</label>
+    <input type="number" id="students-female-g50" name="students50" required>
+
+    <label for="students-female-g51">Students in Grade 3:</label>
+    <input type="number" id="students-female-g51" name="students51" required>
+
+    <label for="students-female-g52">Students in Grade 4:</label>
+    <input type="number" id="students-female-g52" name="students52" required>
+
+    <label for="students-female-g53">Students in Grade 5:</label>
+    <input type="number" id="students-female-g53" name="students53" required>
+
+    <label for="students-female-g54">Students in Grade 6:</label>
+    <input type="number" id="students-female-g54" name="students54" required>
+
+    <label for="students-female-g55">Students in Grade 7:</label>
+    <input type="number" id="students-female-g55" name="students55" required>
+
+    <label for="students-female-g56">Students in Grade 8:</label>
+    <input type="number" id="students-female-g56" name="students56" required>
+
+    <label for="students-female-g57">Students in Grade 9:</label>
+    <input type="number" id="students-female-g57" name="students57" required>
+
+    <label for="students-female-g58">Students in Grade 10:</label>
+    <input type="number" id="students-female-g58" name="students58" required>
+
+    <label for="students-female-g59">Students in Grade 11:</label>
+    <input type="number" id="students-female-g59" name="students59" required>
+
+    <label for="students-female-g60">Students in Grade 12:</label>
+    <input type="number" id="students-female-g60" name="students60" required>
+</div>
+
+<div>
+    <label for="students-female-g11">Gender:Male</label>
+    <input type="text" id="students-female-g11" name="Gender6" value="Male" required hidden>
+    <label for="students-female-g12">Type:डेस्कॉलर</label>
+    <input input type="text" id="students-female-g12" name="type6" value="डेस्कॉलर" required hidden>
+
+    <label for="students-female-g61">Students in Grade 1:</label>
+    <input type="number" id="students-female-g61" name="students61" required>
+
+    <label for="students-female-g62">Students in Grade 2:</label>
+    <input type="number" id="students-female-g62" name="students62" required>
+
+    <label for="students-female-g63">Students in Grade 3:</label>
+    <input type="number" id="students-female-g63" name="students63" required>
+
+    <label for="students-female-g64">Students in Grade 4:</label>
+    <input type="number" id="students-female-g64" name="students64" required>
+
+    <label for="students-female-g65">Students in Grade 5:</label>
+    <input type="number" id="students-female-g65" name="students65" required>
+
+    <label for="students-female-g66">Students in Grade 6:</label>
+    <input type="number" id="students-female-g66" name="students66" required>
+
+    <label for="students-female-g67">Students in Grade 7:</label>
+    <input type="number" id="students-female-g67" name="students67" required>
+
+    <label for="students-female-g68">Students in Grade 8:</label>
+    <input type="number" id="students-female-g68" name="students68" required>
+
+    <label for="students-female-g69">Students in Grade 9:</label>
+    <input type="number" id="students-female-g69" name="students69" required>
+
+    <label for="students-female-g70">Students in Grade 10:</label>
+    <input type="number" id="students-female-g70" name="students70" required>
+
+    <label for="students-female-g71">Students in Grade 11:</label>
+    <input type="number" id="students-female-g71" name="students71" required>
+
+    <label for="students-female-g72">Students in Grade 12:</label>
+    <input type="number" id="students-female-g72" name="students72" required>
+</div>
+
+<button type="submit">Submit</button>
+</form>
+
+<script>
+    function fillAttendance() {
+        $.ajax({
+            url: '/teacher/fillattendance',
+            type: 'GET',
+            success: function (response) {
+                // Clear the existing content in the main section
+                $('main').empty();
+                $('main').html(response);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        // Use document.ready to ensure the DOM is fully loaded before executing the script
+
+        $('#fillAttendance_container').submit(function (event) {
+            // event.preventDefault();
+            const formData = $(this).serialize();
+
+            $.ajax({
+                url: '/teacher/fillattendance',
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+</script>
+

@@ -77,7 +77,8 @@ class UserController {
 
                             console.log(`Total Students: ${totalStudents}`);
                             console.log(`Total Schools: ${totalSchools}`);
-
+                            
+                            // change to admin dashboard
                             res.render('admin_dash', {
                                 title: 'dashboard',
                                 total_stud: totalStudents,
@@ -87,7 +88,8 @@ class UserController {
                         });
                     });
                 } else {
-                    res.render('home', {
+                    // change to home 
+                    res.render('teacher_dash', {
                         title: 'Tribal Schools',
                         email:req.session.email
                     });

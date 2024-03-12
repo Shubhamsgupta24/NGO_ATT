@@ -1,0 +1,318 @@
+<link rel="stylesheet" href="/css/dash.css">
+<!-- <link rel="stylesheet" href="/css/fill_attendance.css"> -->
+
+<header>
+    <div class="navbar">
+        <div style="color: white; height: 30px; margin-right: 400px;">
+            <p>Government of Maharashtra</p>
+        </div>
+        <div class="logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </div>
+        <div class="logoutp" style="color: white; margin-right: 150px; padding-top: 2px;"><a>Log Out</a></div>
+    </div>
+</header>
+
+<div class="container">
+    <aside>
+        <div class="top">
+            <div class="logo">
+                <img src="/images/logo.png" alt="logo">
+                <h2>School</h2>
+            </div>
+        </div>
+        <div class="sidebar">
+            <a href="#" onclick="refreshPage()">
+                <span class="material-symbols-outlined">grid_view</span>
+                <h3>Dashboard</h3>
+            </a>
+            <a href="#" onclick="AddStudentForm()">
+                <span class="material-symbols-outlined">school</span>
+                <h3>Add Student</h3>
+            </a>
+            <!-- Add other sidebar links as needed -->
+            <a href="#" onclick="getAttendanceForm()">
+                <span class="material-symbols-outlined">mail</span>
+                <h3>Take Attendance</h3>
+            </a>
+            <a href="#" id="check-attendance-link" onclick="getAttendance()">
+                <span class="material-symbols-outlined">group</span>
+                <h3>Check Attendance</h3>
+            </a>
+            <a href="#" onclick="fillAttendance()">
+                <span class="material-symbols-outlined">group</span>
+                <h3>Fill Attendance</h3>
+            </a>
+            <a href="/teacher/seeAttendance" onclick="SeeAttendance()">
+                <span class="material-symbols-outlined">group</span>
+                <h3>See Attendance</h3>
+            </a>
+            <a href="/user/logout">
+                <span class="material-symbols-outlined">logout</span>
+                <h3>Log out</h3>
+            </a>
+        </div>
+    </aside>
+
+    <main>
+        <h1>Dashboard</h1>
+        <form id="attendance-form" method="post">
+            <div class="mb-3">
+                <label for="school" class="form-label">School</label>
+                <select id="school" name="school" class="form-select">
+                    <option value="शिर्वे">शिर्वे</option>
+                    <option value="लोभाणी">लोभाणी</option>
+                    <option value="सलसाडी">सलसाडी</option>
+                    <option value="अमोणी">अमोणी </option>
+                    <option value="राणीपूर">राणीपूर</option>
+                    <option value="बोरद">बोरद</option>
+                    <option value="जांभारइ">जांभारइ</option>
+                    <option value="इच्छागव्हाण">इच्छागव्हाण</option>
+                    <option value="भांगरापाणी">भांगरापाणी</option>
+                    <option value="नाला">नाला</option>
+                    <option value="कुंभारखान">कुंभारखान</option>
+                    <option value="अलिविहीर">अलिविहीर</option>
+                    <option value="बर्डी">बर्डी</option>
+                    <option value="भगदरी">भगदरी</option>
+                    <option value="दाब">दाब</option>
+                    <option value="तालंबा">तालंबा</option>
+                    <option value="मोरंबा">मोरंबा</option>
+                    <option value="होराफळी">होराफळी</option>
+                    <option value="वडफळी">वडफळी</option>
+                    <option value="सरी">सरी</option>
+                    <option value="खडकापाणी">खडकापाणी</option>
+                    <option value="कंकाळामाळ">कंकाळामाळ</option>
+                    <option value="जांगठी">जांभारइ</option>
+                    <option value="गमण">गमण</option>
+                    <option value="दहेल">दहेल</option>
+                    <option value="तोरणमाळ">तोरणमाळ</option>
+                    <option value="चुलवड">चुलवड</option>
+                    <option value="मांडवी">मांडवी</option>
+                    <option value="हातधुई">हातधुई</option>
+                    <option value="काकरदा">काकरदा</option>
+                    <option value="रोषमाळ">रोषमाळ</option>
+                    <option value="असली">असली</option>
+                    <option value="बिजरी">बिजरी</option>
+                    <option value="तलारइ">तलारइ</option>
+                    <option value="मोजरा">मोजरा</option>
+                    <option value="सोन खुर्द">सोन खुर्द</option>
+                    <option value="झापी">झापी</option>
+                    <option value="सिंदीदिगर">सिंदीदिगर</option>
+                    <option value="शेलगदा">शेलगदा</option>
+                    <option value="वलवाल">वलवाल</option>
+                    <option value="त्रिशूल">त्रिशूल</option>
+                    <option value="तेलखेडी">तेलखेडी</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Type of student</label>
+                <select id="type" name="type" class="form-select">
+                    <option value="आश्रमिक">आश्रमिक</option>
+                    <option value="विनासवळत">विनासवळत</option>
+                    <option value="डेस्कॉलर">डेस्कॉलर</option>
+                    <option value="None">None</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="startDate" class="form-label">Date</label>
+                <input type="date" id="startDate" name="Date" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="type1" class="form-label">Attendance Status</label>
+                <select id="type1" name="status" class="form-select">
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                    <option value="None">None</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="type2" class="form-label">Class</label>
+                <select id="type2" name="year" class="form-select">
+                    <option value="1">पहिली</option>
+                    <option value="2">दुसरी</option>
+                    <option value="3">तिसरी</option>
+                    <option value="4">चौथी</option>
+                    <option value="5">पाचवी</option>
+                    <option value="6">सहावी</option>
+                    <option value="7">सातवी</option>
+                    <option value="8">आठवी</option>
+                    <option value="9">नवमी</option>
+                    <option value="10">दहावी</option>
+                    <option value="11">11th</option>
+                    <option value="12">बारावी</option>
+                    <option value="None">None</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="type3" class="form-label">Attendance Status</label>
+                <select id="type3" name="gender" class="form-select">
+                    <option value="Male">मुले</option>
+                    <option value="Female">मुली</option>
+                    <option value="None">None</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+        <div id="attendance-sheet">
+        </div>
+    </main>
+</div>
+
+<script src="/js/dash.js"></script>
+<script>
+    function refreshPage() {
+        location.reload();
+    }
+
+    function fillAttendance() {
+        $.ajax({
+            url: '/teacher/fillattendance',
+            type: 'GET',
+            success: function (response) {
+                // Clear the existing content in the main section
+                $('main').empty();
+                $('main').html(response);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+
+    function AddStudentForm() {
+        $.ajax({
+            url: '/teacher/add_student',
+            type: 'GET',
+            success: function (response) {
+                // Clear the existing content in the main section
+                $('main').empty();
+                $('main').html(response);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+
+    function SeeAttendance() {
+        event.preventDefault();
+        $.ajax({
+            url: '/teacher/seeAttendance',
+            type: 'GET',
+            success: function (response) {
+                // Clear the existing content in the main section
+                $('main').empty();
+                $('main').html(response);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+
+    function getAttendanceForm() {
+        $.ajax({
+            url: '/teacher/attendance',
+            type: 'GET',
+            success: function (response) {
+                // Clear the existing content in the main section
+                $('main').empty();
+                $('main').html(response);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+
+    $('#addstudent-form').submit(function (event) {
+        // Prevent the form from submitting normally
+        event.preventDefault();
+
+        // Get the form data
+        const formData = $(this).serialize();
+
+        // Send the form data using AJAX
+        $.ajax({
+            url: '/teacher/add_student',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    });
+
+    $('#attendance-form').submit(function (event) {
+        // Prevent the form from submitting normally
+        event.preventDefault();
+
+        // Get the form data
+        const formData = $(this).serialize();
+
+        // Send the form data using AJAX
+        $.ajax({
+            url: '/admin/attendance',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                // Create h3 element with the total number of students and add margin-top
+                const totalStudentsH3 = $('<h3>Total Students: ' + response.rowCount + '</h3>').css('margin-top', '10px');
+
+                // Append the h3 tag to the attendance-sheet div
+                $('#attendance-sheet').empty().append(totalStudentsH3);
+
+                // Create table element
+                const table = $('<table class="table"></table>');
+                table.css('max-width', $('main').width());
+
+                // Create table headers
+                const headers = ['Student Name', 'School', 'Date', 'Gender'];
+                const headerRow = $('<tr></tr>');
+                headers.forEach(header => {
+                    headerRow.append('<th>' + header + '</th>');
+                });
+                table.append(headerRow);
+
+                // Create table rows for each attendance record
+                response.data.forEach(attendance => {
+                    const row = $('<tr></tr>');
+                    row.append('<td>' + attendance.studentName + '</td>');
+                    row.append('<td>' + attendance.schoolName + '</td>');
+                    row.append('<td>' + attendance.attendanceDate.split('T')[0] + '</td>');
+                    row.append('<td>' + attendance.gender + '</td>');
+                    table.append(row);
+                });
+
+                // Append the table to the attendance-sheet div
+                $('#attendance-sheet').append(table);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+
+        $(document).ready(function () {
+            // Use document.ready to ensure the DOM is fully loaded before executing the script
+
+            $('#fillAttendance_container').submit(function (event) {
+                event.preventDefault();
+                const formData = $(this).serialize();
+
+                $.ajax({
+                    url: '/teacher/fillattendance',
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    });
+</script>
