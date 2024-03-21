@@ -37,7 +37,12 @@ const homeController = new HomeController();
 // Require routes
 const homeRoutes = require('./src/routes/index');
 
+
 app.use('/', homeRoutes);
+
+app.get("/downloadExcelFile",(req,res)=>{
+  res.download(path.resolve('users.xlsx'));
+});
 
 // Connect to the database
 connection.connect(function (err) {

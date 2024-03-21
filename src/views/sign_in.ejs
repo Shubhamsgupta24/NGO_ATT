@@ -1,25 +1,86 @@
-<!------ Include the above in your HEAD tag ---------->
-<link rel="stylesheet" href="/css/signIn.css">
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="card-body">
-    <h3 class="text-center mb-4">Login</h3>
-    <form action="/user/create-session" method="post">
-        <div class="mb-3">
-            <label for="username" class="form-label">Email:</label>
-            <input type="email" name="email" id="username" class="form-control">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribal School-Sign in</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="/css/signIn.css">
+    <link rel="icon" type="image/png/svg" href="fcc_secondary_small (1).svg">
+
+</head>
+
+<body>
+    <div class="container" style="display: flex;">
+        <div class="sidebar"
+            style="height: 800px;width: 500px;background-image: linear-gradient(rgba(0,0,50,0.8),rgba(0,0,50,0.8));;margin-left: -120px;">
+            <div class="side" style="margin-right: 150px;">
+                <img src="/images/logo.png" alt=""
+                    style="height: 80px;width: 80px;margin-left: 200px;margin-top: 180px;">
+                <h3 style="margin-left: 70px;margin-top: 30px;white-space:nowrap; color: white;">Nandurbar Schools
+                    Portal</h3>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password:</label>
-            <input type="password" name="password" id="password" class="form-control">
+        <div class="form" style="margin-left: 350px; margin-top: 180px;">
+            <div class="content">
+                <header style="color: black; font-weight: 500;font-size:25px;text-align:center;">Login</header>
+                <form action="/user/create-session" method="post">
+                    <div class="input-field">
+                        <input type="email" placeholder="Email" class="input"
+                            style="width: 100%;height: 30px; margin-top: 10px;border-radius: 6px;" name="email" required autocomplete="username">
+                    </div>
+                    <div class="input-field" style="display: flex;align-items: center;">
+                        <input type="password" placeholder="Password" id="pass"
+                            style="width: 100%; height: 30px;border-radius: 6px;" name="password" required  autocomplete="current-password">
+                        <img src="/images/eye-close-1.png" alt="" id="eye"
+                            style="width: 20px;height: 20px;position: absolute; cursor: pointer; margin-left: 300px;">
+                    </div>
+
+                    <div class="forgot">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+
+                    <div class="button-field" style="height: 30px;">
+                        <button type="submit">Login</button>
+                    </div>
+
+                    <div class="forgot" style="margin-top: 10px;">
+                        <span>New user ? <a href="register.html">Register Now</a></span>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="remember-me" name="remember-me">
-            <label class="form-check-label" for="remember-me">Remember me</label>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
-    </form>
-    <div class="text-right mt-3">
-        <a href="#" class="text-muted">Register here</a>
     </div>
-</div>
 
+    <script>
+        input = document.querySelector("#pass")
+        input = document.querySelector("#eye")
+        eye.addEventListener("click", () => {
+            if (pass.type == "password") {
+                pass.type = "text";
+            }
+            else {
+                pass.type = "password"
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

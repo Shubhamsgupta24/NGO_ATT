@@ -22,8 +22,7 @@ class UserController {
     }
 
     //destroy session
-    logout(req, res, next) 
-    {
+    logout(req, res, next) {
         req.session.destroy((err) => {
             if (err) {
                 console.log(err);
@@ -32,8 +31,7 @@ class UserController {
         })
     }
 
-    createSession(req, res, next) 
-    {
+    createSession(req, res, next) {
         const email = req.body.email;
         const password = req.body.password;
 
@@ -77,7 +75,7 @@ class UserController {
 
                             console.log(`Total Students: ${totalStudents}`);
                             console.log(`Total Schools: ${totalSchools}`);
-                            
+
                             // change to admin dashboard
                             res.render('admin_dash', {
                                 title: 'dashboard',
@@ -87,19 +85,37 @@ class UserController {
                             return;
                         });
                     });
-                } else {
-                    // change to home 
-                    res.render('teacher_dash', {
-                        title: 'Tribal Schools',
-                        email:req.session.email
+                }
+                else {
+                    res.render('home', {
+                        title: 'home',
                     });
-                    return;
                 }
             } else {
-                console.log('User not found or incorrect credentials');
+                const query4 = `SELECT * FROM teacher WHERE email = ? AND password = ?`;
+
+                connection.query(query4, [email, password], (error, teacherResults, fields) => {
+                    if (error) {
+                        console.error(error);
+                        res.status(500).send('Internal Server Error');
+                        return;
+                    }
+
+                    if (teacherResults.length > 0) {
+                        // Do something for teacher dashboard
+                        res.render('teacher_dash', {
+                            title: 'dashboard',
+                        });
+                    } else {
+                        res.render('home', {
+                            title: 'home',
+                        });
+                    }
+                });
             }
         });
     }
+
 
     create(req, res, next) {
         const { full_name, email, password, confirm_password } = req.body;

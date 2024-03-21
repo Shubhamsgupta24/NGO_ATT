@@ -12,6 +12,7 @@ router.use('/user', require('./user'));
 router.use('/schools',require('./schools'));
 router.use('/admin', require('./admin'));
 router.use('/teacher', require('./teacher'));
+router.get("/downloadExcel",homeController.download_form);
 router.post("/downloadExcel",homeController.download);
 
 module.exports=router;

@@ -1,0 +1,98 @@
+<form id="downloadExcel" method="post" action="/downloadExcel">
+    <div class="mb-3">
+        <label for="school" class="form-label">School</label>
+        <select id="school" name="school" class="form-select">
+            <option value="शिर्वे">शिर्वे</option>
+            <option value="लोभाणी">लोभाणी</option>
+            <option value="सलसाडी">सलसाडी</option>
+            <option value="अमोणी">अमोणी </option>
+            <option value="राणीपूर">राणीपूर</option>
+            <option value="बोरद">बोरद</option>
+            <option value="जांभारइ">जांभारइ</option>
+            <option value="इच्छागव्हाण">इच्छागव्हाण</option>
+            <option value="भांगरापाणी">भांगरापाणी</option>
+            <option value="नाला">नाला</option>
+            <option value="कुंभारखान">कुंभारखान</option>
+            <option value="अलिविहीर">अलिविहीर</option>
+            <option value="बर्डी">बर्डी</option>
+            <option value="भगदरी">भगदरी</option>
+            <option value="दाब">दाब</option>
+            <option value="तालंबा">तालंबा</option>
+            <option value="मोरंबा">मोरंबा</option>
+            <option value="होराफळी">होराफळी</option>
+            <option value="वडफळी">वडफळी</option>
+            <option value="सरी">सरी</option>
+            <option value="खडकापाणी">खडकापाणी</option>
+            <option value="कंकाळामाळ">कंकाळामाळ</option>
+            <option value="जांगठी">जांभारइ</option>
+            <option value="गमण">गमण</option>
+            <option value="दहेल">दहेल</option>
+            <option value="तोरणमाळ">तोरणमाळ</option>
+            <option value="चुलवड">चुलवड</option>
+            <option value="मांडवी">मांडवी</option>
+            <option value="हातधुई">हातधुई</option>
+            <option value="काकरदा">काकरदा</option>
+            <option value="रोषमाळ">रोषमाळ</option>
+            <option value="असली">असली</option>
+            <option value="बिजरी">बिजरी</option>
+            <option value="तलारइ">तलारइ</option>
+            <option value="मोजरा">मोजरा</option>
+            <option value="सोन खुर्द">सोन खुर्द</option>
+            <option value="झापी">झापी</option>
+            <option value="सिंदीदिगर">सिंदीदिगर</option>
+            <option value="शेलगदा">शेलगदा</option>
+            <option value="वलवाल">वलवाल</option>
+            <option value="त्रिशूल">त्रिशूल</option>
+            <option value="तेलखेडी">तेलखेडी</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="startDate" class="form-label">Date</label>
+        <input type="date" id="startDate" name="Date" class="form-control">
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+<div id="attendance-sheet">
+</div>
+
+<script>
+    $('#downloadExcel').submit(function (event) {
+        // Prevent the form from submitting normally
+        event.preventDefault();
+
+        // Serialize the form data
+        var formData = $(this).serialize();
+
+        $.ajax({
+            url: '/downloadExcel',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                if (response.status === 'success') {
+                    // Create anchor tag with the specified href attribute
+                    var downloadLink = $('<a>', {
+                        id: 'downloadLink',
+                        text: 'Download Excel',
+                        style: 'cursor: pointer; text-decoration: none; padding: 5px 10px; background-color: #007bff; margin-top: 10px !important; color: #fff; border: 1px solid #007bff; border-radius: 5px; margin-right: 10px;',
+                        href: '/downloadExcelFile' // Replace with your actual download URL
+                    });
+
+                    // Append the anchor tag to the main container or any other desired location
+                    $('main').append(downloadLink); // Replace 'mainContainer' with the ID or class of your main container
+                } else {
+                    console.error('Error on the server side:', response.message);
+                    // Handle the server error or other response status
+                    // You might want to display an error message to the user
+                }
+            },
+            error: function (error) {
+                console.error('Error during the AJAX request:', error);
+                // Handle the AJAX request error
+                // You might want to display an error message to the user
+            }
+        });
+
+    });
+</script>

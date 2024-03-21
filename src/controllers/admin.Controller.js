@@ -1,9 +1,11 @@
 const connection = require('../config/database');
 const path = require('path');
 
-class AdminController {
+class AdminController 
+{
 
-    attendanceInfo(req, res, next) {
+    attendanceInfo(req, res, next)
+    {
         const ejsFilePath = path.join(__dirname, '..', 'views', 'checkAttendance.ejs');
         res.sendFile(ejsFilePath);
     }

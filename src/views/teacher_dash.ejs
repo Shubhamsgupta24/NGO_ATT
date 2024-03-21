@@ -6,10 +6,6 @@
         <div style="color: white; height: 30px; margin-right: 400px;">
             <p>Government of Maharashtra</p>
         </div>
-        <div class="logout">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        </div>
-        <div class="logoutp" style="color: white; margin-right: 150px; padding-top: 2px;"><a>Log Out</a></div>
     </div>
 </header>
 
@@ -46,6 +42,10 @@
             <a href="/teacher/seeAttendance" onclick="SeeAttendance()">
                 <span class="material-symbols-outlined">group</span>
                 <h3>See Attendance</h3>
+            </a>
+            <a href="/teacher/seeAttendance" onclick="sheet()">
+                <span class="material-symbols-outlined">group</span>
+                <h3>Download Attendance</h3>
             </a>
             <a href="/user/logout">
                 <span class="material-symbols-outlined">logout</span>
@@ -164,6 +164,23 @@
 <script>
     function refreshPage() {
         location.reload();
+    }
+
+    function sheet()
+    {
+        $.ajax({
+            url: '/downloadExcel',
+            type: 'GET',
+            success: function (response) 
+            {
+                $('main').empty();
+                $('main').html(response);
+            },
+            error: function (error)
+            {
+                console.log(error);
+            }
+        });
     }
 
     function fillAttendance() {
