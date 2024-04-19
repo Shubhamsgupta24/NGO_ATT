@@ -22,7 +22,7 @@ CREATE TABLE `ngo_mngt`.`student` (
   FOREIGN KEY (`school_id`) REFERENCES `ngo_mngt`.`schools`(`schools_id`)
 );
 
-DROP TABLE IF EXISTS `ngo_mngt`.`student`;
+-- DROP TABLE IF EXISTS `ngo_mngt`.`student`;
   
 CREATE TABLE `ngo_mngt`.`schools` (
   `schools_id` INT NOT NULL AUTO_INCREMENT,
@@ -108,15 +108,16 @@ VALUES
 
 CREATE TABLE `ngo_mngt`.attendance (
   student_ID INT NOT NULL,
-  status VARCHAR(255) NOT NULL,  -- Removed single quotes around 'status'
+  status VARCHAR(255) NOT NULL,
   type VARCHAR(255) NOT NULL,
   school_ID INT NOT NULL,
   attendance_date DATE NOT NULL,
+  PRIMARY KEY (student_ID, attendance_date),
   FOREIGN KEY (student_ID) REFERENCES student(stud_id) ON DELETE CASCADE,
   FOREIGN KEY (school_ID) REFERENCES schools(schools_id) ON DELETE CASCADE
 );
 
-DROP TABLE ngo_mngt.attendance;
+-- DROP TABLE ngo_mngt.attendance;
 
 
 -- entering dummy attendance data 
@@ -145,7 +146,61 @@ VALUES
 (15, 'Present', 'आश्रमिक', 12, '2024-03-01'),
 (16, 'Absent', 'विनासवळत', 12, '2024-03-01');
 
- 
+DROP TABLE ngo_mngt.Present;
+-- administrator requirment
+CREATE TABLE `ngo_mngt`.Present (
+  school_name VARCHAR(45) NOT NULL,
+  `1` INT NOT NULL,
+  `2` INT NOT NULL,
+  `3` INT NOT NULL,
+  `4` INT NOT NULL,
+  `5` INT NOT NULL,
+  `6` INT NOT NULL,
+  `7` INT NOT NULL,
+  `8` INT NOT NULL,
+  `9` INT NOT NULL,
+  `10` INT NOT NULL,
+  `11` INT NOT NULL,
+  `12` INT NOT NULL,
+  total INT NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  gender VARCHAR(45) NOT NULL,
+  attendance_date DATE NOT NULL
+);
+
+
+INSERT INTO ngo_mngt.Present (
+  school_name, 
+  `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, 
+  total, 
+  type, 
+  gender, 
+  attendance_date
+)
+VALUES (
+  'School XYZ', 
+  10, 12, 8, 15, 20, 11, 9, 14, 13, 18, 16, 7, 
+  (10 + 12 + 8 + 15 + 20 + 11 + 9 + 14 + 13 + 18 + 16 + 7),
+  'Type XYZ', 
+  'Female', 
+  '2024-03-08'
+);
+
+DROP TABLE ngo_mngt.teacher;
+
+CREATE TABLE `ngo_mngt`.`teacher` (
+  `teacher_id` INT NOT NULL AUTO_INCREMENT,
+  `teacher_name` VARCHAR(45) NOT NULL,
+  `teacher_school` INT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`teacher_id`),
+  FOREIGN KEY (`teacher_school`) REFERENCES `ngo_mngt`.`schools`(`schools_id`)
+);
+
+
+INSERT INTO `ngo_mngt`.`teacher` (`teacher_name`, `teacher_school`, `email`, `password`) 
+VALUES ('teacher', 2, 'teacher@gmail.com', '1234');
 
 
   

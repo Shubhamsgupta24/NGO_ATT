@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    font-family: poppins,sans-serif;
+}
+body{
+    /* background-image:  url(school.jpg); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    
+
+}
+
+.form {
+    background-color: white;
+    border-radius: 5px;
+    padding: 30px;/
+    
+    
+    
+}
+/* .content form{
+    height: 45px;
+    width: 100%;
+} */
+
+.input-field{
+    height: 50px;
+    width: 100%;
+    border: 20px black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.input-field:focus{
+    border-bottom-width: 2px;
+}
+
+
+.button-field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+    background-color: #0171d3;
+    color: #fff;
+}
+
+.button-field button:hover{
+    background-color: #016dcb;
+}
+.input-field input{
+    padding: 0 15px;
+    border: 1px solid #cacaca;
+    
+}
+.input-field input:hover{
+    box-shadow:0 2rem 3rem rgba(132,139,200,0.18);;
+}
+
+.forgot {
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.forgot a{
+    text-decoration: none;
+    color: #0171d3;
+}
+
+.forgot span,
+.forgot span a{
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    
+
+}
+
+.forgot a:hover{
+    text-decoration: underline;
+}
+
+.line{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #cacaca;
+}
+
+.media {
+    /* display: flex;
+    background-color: #0171d3; */
+    height: 50px;
+    margin-bottom: 80px;
+}
+
+.media a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+a.facebook{
+    background-color: #0171d3;
+    color: #fff;
+    text-decoration: none;
+}
+a.facebook .fa-facebook{
+    height: 28px;
+    width: 28px;
+    margin-top: 13px;
+    text-decoration: none;
+}
+
+a.google{
+    background-color:#fff;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #cacaca;
+}
+/* a.google .fa-google{
+    height: 28px;
+    width: 28px;
+    margin-top: 13px;
+    text-decoration: none;
+} */
+img.google-img{
+    height: 28px;
+    width: 28px;
+    object-fit: cover;
+    /* margin-right: 120px; */
+}
+
+a.google.span{
+    color: #232826;
+}
