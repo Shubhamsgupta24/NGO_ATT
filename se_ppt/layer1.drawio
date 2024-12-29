@@ -1,0 +1,156 @@
+<mxfile host="app.diagrams.net" modified="2024-02-23T10:13:49.123Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="TTrj1Bqr7aUSdd4vartA" scale="1" border="0" version="23.1.6" type="device">
+  <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
+    <mxGraphModel dx="1290" dy="1726" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dNxyNK7c78bLwvsdeMH5-11" value="Orgchart" style="swimlane;html=1;startSize=20;horizontal=1;containerType=tree;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="220" y="-70" width="830" height="1160" as="geometry" />
+        </mxCell>
+        <UserObject label="Government Officer" name="Tessa Miller" position="CFO" location="Office 1" email="me@example.com" placeholders="1" id="dNxyNK7c78bLwvsdeMH5-12">
+          <mxCell style="label;image=https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-3-128.png;whiteSpace=wrap;html=1;rounded=0;glass=0;treeMoving=1;treeFolding=1;" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="260" y="50" width="180" height="70" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="dNxyNK7c78bLwvsdeMH5-13" value="" style="endArrow=blockThin;endFill=1;fontSize=11;edgeStyle=elbowEdgeStyle;elbow=vertical;rounded=0;" parent="dNxyNK7c78bLwvsdeMH5-11" source="dNxyNK7c78bLwvsdeMH5-12" target="dNxyNK7c78bLwvsdeMH5-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-17" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;elbow=vertical;" parent="dNxyNK7c78bLwvsdeMH5-11" source="dNxyNK7c78bLwvsdeMH5-14" target="r_8hIYQDrozrzLLrE9bj-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-60" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="dNxyNK7c78bLwvsdeMH5-11" source="dNxyNK7c78bLwvsdeMH5-14" target="r_8hIYQDrozrzLLrE9bj-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="NGO Officer" name="Edward Morrison" position="Brand Manager" location="Office 2" email="me@example.com" placeholders="1" id="dNxyNK7c78bLwvsdeMH5-14">
+          <mxCell style="label;image=https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-10-3-128.png;whiteSpace=wrap;html=1;rounded=0;glass=0;treeFolding=1;treeMoving=1;" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="40" y="180" width="180" height="80" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="dNxyNK7c78bLwvsdeMH5-15" value="" style="endArrow=blockThin;endFill=1;fontSize=11;edgeStyle=elbowEdgeStyle;elbow=vertical;rounded=0;" parent="dNxyNK7c78bLwvsdeMH5-11" source="dNxyNK7c78bLwvsdeMH5-12" target="dNxyNK7c78bLwvsdeMH5-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-16" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="dNxyNK7c78bLwvsdeMH5-11" source="dNxyNK7c78bLwvsdeMH5-16" target="r_8hIYQDrozrzLLrE9bj-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="School Admin" name="Evan Valet" position="HR Director" location="Office 4" email="me@example.com" placeholders="1" link="https://www.draw.io" id="dNxyNK7c78bLwvsdeMH5-16">
+          <mxCell style="label;image=https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-9-2-128.png;whiteSpace=wrap;html=1;rounded=0;glass=0;treeFolding=1;treeMoving=1;" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="260" y="180" width="180" height="80" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="dNxyNK7c78bLwvsdeMH5-17" value="" style="endArrow=blockThin;endFill=1;fontSize=11;edgeStyle=elbowEdgeStyle;elbow=vertical;rounded=0;" parent="dNxyNK7c78bLwvsdeMH5-11" source="dNxyNK7c78bLwvsdeMH5-12" target="dNxyNK7c78bLwvsdeMH5-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="School Teacher" name="Alison Donovan" position="System Admin" location="Office 3" email="me@example.com" placeholders="1" link="https://www.draw.io" id="dNxyNK7c78bLwvsdeMH5-18">
+          <mxCell style="label;image=https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-2-128.png;whiteSpace=wrap;html=1;rounded=0;glass=0;" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="490" y="180" width="180" height="80" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Delete/Update school info" treeRoot="1" id="r_8hIYQDrozrzLLrE9bj-11">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="70" y="700" width="110" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-15" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0.5;entryY=1;entryDx=0;entryDy=0;elbow=vertical;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-14" target="dNxyNK7c78bLwvsdeMH5-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-31" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shape=arrow;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-14" target="r_8hIYQDrozrzLLrE9bj-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Registration" treeRoot="1" id="r_8hIYQDrozrzLLrE9bj-14">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="290" y="310" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-32" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shape=arrow;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-19" target="r_8hIYQDrozrzLLrE9bj-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Authentication the User" treeRoot="1" id="r_8hIYQDrozrzLLrE9bj-19">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="290" y="440" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-33" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shape=arrow;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-18" target="r_8hIYQDrozrzLLrE9bj-20" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-62" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shape=arrow;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-18" target="r_8hIYQDrozrzLLrE9bj-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Dashboard" treeRoot="1" id="r_8hIYQDrozrzLLrE9bj-18">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="290" y="570" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="List of Query request" treeRoot="1" id="r_8hIYQDrozrzLLrE9bj-21">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="540" y="570" width="110" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-34" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shape=arrow;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-20" target="r_8hIYQDrozrzLLrE9bj-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-54" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=1;entryY=0.5;entryDx=0;entryDy=0;shape=arrow;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-20" target="r_8hIYQDrozrzLLrE9bj-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="List of Schools" treeRoot="1" id="r_8hIYQDrozrzLLrE9bj-20">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="290" y="700" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-22" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-20" target="r_8hIYQDrozrzLLrE9bj-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-35" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shape=arrow;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-25" target="r_8hIYQDrozrzLLrE9bj-27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-55" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=1;entryY=0.5;entryDx=0;entryDy=0;shape=arrow;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-25" target="r_8hIYQDrozrzLLrE9bj-23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="List of Students" treeRoot="1" id="r_8hIYQDrozrzLLrE9bj-25">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="290" y="830" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Google sheets" treeRoot="1" id="r_8hIYQDrozrzLLrE9bj-24">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="520" y="960" width="110" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Delete/Update student info" treeRoot="1" id="r_8hIYQDrozrzLLrE9bj-23">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="72.5" y="830" width="110" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-61" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shape=arrow;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-26" target="r_8hIYQDrozrzLLrE9bj-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Add School" treeRoot="1" id="r_8hIYQDrozrzLLrE9bj-26">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="75" y="510" width="105" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-63" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shape=arrow;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-27" target="r_8hIYQDrozrzLLrE9bj-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Record student attendance" treeRoot="1" id="r_8hIYQDrozrzLLrE9bj-27">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+            <mxGeometry x="290" y="960" width="120" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;segment=10;curved=1;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-29" target="r_8hIYQDrozrzLLrE9bj-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-29" value="Accept" style="ellipse;whiteSpace=wrap;html=1;align=center;newEdgeStyle={&quot;edgeStyle&quot;:&quot;entityRelationEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;,&quot;segment&quot;:10,&quot;curved&quot;:1,&quot;sourcePerimeterSpacing&quot;:0,&quot;targetPerimeterSpacing&quot;:0};treeFolding=1;treeMoving=1;" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+          <mxGeometry x="480" y="670" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;segment=10;curved=1;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="dNxyNK7c78bLwvsdeMH5-11" source="r_8hIYQDrozrzLLrE9bj-28" target="r_8hIYQDrozrzLLrE9bj-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_8hIYQDrozrzLLrE9bj-28" value="Reject" style="ellipse;whiteSpace=wrap;html=1;align=center;newEdgeStyle={&quot;edgeStyle&quot;:&quot;entityRelationEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;,&quot;segment&quot;:10,&quot;curved&quot;:1,&quot;sourcePerimeterSpacing&quot;:0,&quot;targetPerimeterSpacing&quot;:0};treeFolding=1;treeMoving=1;" parent="dNxyNK7c78bLwvsdeMH5-11" vertex="1">
+          <mxGeometry x="620" y="670" width="100" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
